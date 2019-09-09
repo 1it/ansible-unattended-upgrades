@@ -1,0 +1,30 @@
+// {{ ansible_managed }}
+
+Unattended-Upgrade::Origins-Pattern {
+//      "origin=Debian,codename=${distro_codename},label=Debian";
+        "origin=Debian,codename=${distro_codename},label=Debian-Security";
+};
+
+// Python regular expressions, matching packages to exclude from upgrading
+Unattended-Upgrade::Package-Blacklist {
+// The following matches all packages starting with linux-
+//  "linux-";
+};
+
+// Unattended-Upgrade::AutoFixInterruptedDpkg "true";
+// Unattended-Upgrade::MinimalSteps "true";
+// Unattended-Upgrade::InstallOnShutdown "false";
+Unattended-Upgrade::Mail "root";
+Unattended-Upgrade::MailOnlyOnError "false";
+// Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
+// Unattended-Upgrade::Remove-New-Unused-Dependencies "true";
+// Unattended-Upgrade::Remove-Unused-Dependencies "false";
+Unattended-Upgrade::Automatic-Reboot "false";
+Unattended-Upgrade::Automatic-Reboot-WithUsers "false";
+Unattended-Upgrade::Automatic-Reboot-Time "now";
+// Unattended-Upgrade::SyslogEnable "false";
+// Unattended-Upgrade::SyslogFacility "daemon";
+// Unattended-Upgrade::OnlyOnACPower "true";
+// Unattended-Upgrade::Skip-Updates-On-Metered-Connections "true";
+// Unattended-Upgrade::Verbose "false";
+// Unattended-Upgrade::Debug "false";
